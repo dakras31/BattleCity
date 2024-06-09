@@ -1,4 +1,6 @@
-#include <iostream>
+//#include <glad>
+//#inlude <GLFW/glfw3.h>
+//#include <iostream>
 
 int main(int argc, char* argv[])
 {
