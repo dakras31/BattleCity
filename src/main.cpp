@@ -21,7 +21,7 @@ const char* vertex_shader =
 "out vec3 color;"
 "void main(){"
 "   color = vertex_color;"
-"   gl_Position = vec4(vertex_position, 1.0)"
+"   gl_Position = vec4(vertex_position, 1.0);"
 "}";
 
 const char* fragment_shader =
@@ -34,6 +34,7 @@ const char* fragment_shader =
 
 int g_windowSizeX = 640;
 int g_windowSizeY = 480;
+
 
 void glfwWindowSizeCallback(GLFWwindow* pWindow, int width, int height)
 {
@@ -100,6 +101,22 @@ int main(int argc, char* argv[])
 	glAttachShader(shader_program, vs);
 	glAttachShader(shader_program, fs);
 	glLinkProgram(shader_program);
+
+	int  success;
+
+	char infoLog[512];
+
+	glGetShaderiv(vs, GL_COMPILE_STATUS, &success);
+
+	if (!success)
+
+	{
+
+		glGetShaderInfoLog(vs, 512, NULL, infoLog);
+
+		std::cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n" << infoLog << std::endl;
+
+	}
 
 	glDeleteShader(vs);
 	glDeleteShader(fs);
