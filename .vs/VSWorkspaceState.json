@@ -4,5 +4,13 @@
       "out\\build\\x64-Debug",
       "out\\install\\x64-Debug"
     ]
-  }
+  },
+  "ExpandedNodes": [
+    "",
+    "\\res",
+    "\\res\\shaders",
+    "\\src",
+    "\\src\\Renderer"
+  ],
+  "PreviewInSolutionExplorer": false
 }
